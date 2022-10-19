@@ -16,7 +16,7 @@ public static ArrayList<dtoAlumno> resultsetAdtoAlumno(ResultSet resultadoConsul
 		try {
 			while ( resultadoConsulta.next() ) {
 				
-				listAlumnos.add(new dtoAlumno(resultadoConsulta.getInt("id_alumno"),
+				listAlumnos.add(new dtoAlumno(resultadoConsulta.getInt("id_Alumno"),
 						resultadoConsulta.getString("nombre"),
 						resultadoConsulta.getString("apellidos"),
 						resultadoConsulta.getString("email"))

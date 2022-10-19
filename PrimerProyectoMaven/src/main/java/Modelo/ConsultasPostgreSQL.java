@@ -149,6 +149,29 @@ try {
 	}
 
 }
+
+//Metodo que crea la tabla
+
+public static void crearTabla(String consulta,Connection conexionGenerada) {
+	
+	System.out.println("[INFORMACIÓN-consultasPostgreSQL-createTable] Entra en crearTabla");
+	Statement declaracionSQL = null;
+	try {
+		
+		declaracionSQL = conexionGenerada.createStatement();
+		declaracionSQL.executeUpdate(consulta);
+		declaracionSQL.close();
+		
+		
+			System.out.println("[INFORMACIÓN-consultasPostgreSQL-createTable] Cierre declaración.");
+			
+		} catch (SQLException e) {
+			
+			System.out.println("[ERROR-consultasPostgreSQL-createTable] Error al borrar alumno: " + e);
+		
+		}
+	
+}
 	
 
 	

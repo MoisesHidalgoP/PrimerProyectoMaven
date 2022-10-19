@@ -44,12 +44,12 @@ public class App
 			//Llama al método que ejecuta la consulta de insert
 			System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Llamada insertNuevoAlumno");
 			//Si los métodos se crean como estáticos no es necesario instanciar una clase.
-			ConsultasPostgreSQL.insertNuevoAlumno("INSERT INTO \"proyectoEclipse\".\"alumnos\" (id_alumno,nombre,apellidos,email)"
-					+ "VALUES(100,'Juanjo','Hernandez','jh@altair.es')", conexionGenerada);
+			ConsultasPostgreSQL.insertNuevoAlumno("INSERT INTO \"proyectoEclipse\".\"alumnos\" (id_Alumno,nombre,apellidos,email)"
+					+ "VALUES(50,'Juanjo','Hernandez','jh@altair.es')", conexionGenerada);
 			
 			
 	
-			//Llamar al método que ejecuta la consulta
+			//Llamada al método que ejecuta la consulta
 			System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Llamada selectAllAlumnos");
 			listAlumnos = ConsultasPostgreSQL.selectAllAlumnos(conexionGenerada);
 			int i = listAlumnos.size();
@@ -58,7 +58,7 @@ public class App
 				System.out.println(alumnos.getNombre()+ " " +alumnos.getApellidos());			}
 			
 			
-			//Llama al metodo que borra el alumno
+			//Llamada al metodo que borra el alumno
 			System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Llamada deleteAlumnos");
 			// Pedimos un id al usuario para borrar
 		    System.out.print("\n\tIntroduzca el id del alumno para eliminarlo:\t");
@@ -67,14 +67,19 @@ public class App
 			ConsultasPostgreSQL.deleteAlumnos("DELETE FROM \"proyectoEclipse\".\"alumnos\" WHERE id_alumno = '"+id+"'", conexionGenerada);
 			
 			
-			//Llama al metodo que actualiza el alumno
+			//Llama daal metodo que actualiza el alumno
 			System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Llamada updateAlumnos");
 			// Pedimos un id al usuario para borrar
 		    System.out.print("\n\tIntroduzca el id del alumno para actualizarlo:\t");
 		    Scanner sc1 = new Scanner(System.in);
 		    int id1 = sc1.nextInt();
-			ConsultasPostgreSQL.deleteAlumnos("UPDATE \"proyectoEclipse\".\"alumnos\" SET nombre = 'Moises', apellidos = 'Hidalgo' WHERE id_alumno = '"+id1+"'", conexionGenerada);
+			ConsultasPostgreSQL.deleteAlumnos("UPDATE \"proyectoEclipse\".\"alumnos\" SET nombre = 'Juanca', apellidos = 'Bada' WHERE id_alumno = '"+id1+"'", conexionGenerada);
 			
+			
+			
+			//Llamada al metodo que crea una tabla 
+			System.out.println("[INFORMACIÓN-controladorPortgreSQL-main] Llamada crearTabla");
+			ConsultasPostgreSQL.crearTabla("CREATE TABLE IF NOT EXISTS profesores (id_profesor CHARACTER VARYING NOT NULL)", conexionGenerada);
 			
 			}
 		
