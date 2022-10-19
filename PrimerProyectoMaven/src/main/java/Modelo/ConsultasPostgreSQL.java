@@ -147,7 +147,7 @@ try {
 		
 	} catch (SQLException e) {
 		
-		System.out.println("[ERROR-consultasPostgreSQL-updateAlumno] Error al borrar alumno: " + e);
+		System.out.println("[ERROR-consultasPostgreSQL-updateAlumno] Error al actualizar alumno: " + e);
 	
 	}
 
@@ -170,7 +170,7 @@ public static void crearTabla(String consulta,Connection conexionGenerada) {
 			
 		} catch (SQLException e) {
 			
-			System.out.println("[ERROR-consultasPostgreSQL-createTable] Error al borrar alumno: " + e);
+			System.out.println("[ERROR-consultasPostgreSQL-createTable] Error crear la tabla: " + e);
 		
 		}
 	
