@@ -12,6 +12,7 @@ import Util.variablesConexionPostgreSQL;
 
 public class ConsultasPostgreSQL {
 
+	//Metodo que devuelve la tabla Alumnos
 public static ArrayList<dtoAlumno> selectAllAlumnos(Connection conexionGenerada) {
 		
 	System.out.println("[INFORMACIÓN-consultasPostgreSQL-selectAllAlumnos] Entra en selectAllAlumnos");
@@ -46,7 +47,7 @@ public static ArrayList<dtoAlumno> selectAllAlumnos(Connection conexionGenerada)
 		
 	}
 
-
+     //Metodo que te devuelve el alumno y sus asignaturas
 public static ArrayList<dtoAlumnoAsignaturas> selectAllAlumnosAsig(Connection conexionGenerada) {
 	
 	System.out.println("[INFORMACIÓN-consultasPostgreSQL-selectAllAlumnosAsig] Entra en selectAllAlumnosAsig");
@@ -80,6 +81,8 @@ public static ArrayList<dtoAlumnoAsignaturas> selectAllAlumnosAsig(Connection co
 	return listAlumnosAsig;
 	
 }
+
+     //Metodo para insertar un nuevo alumno
 public static void insertNuevoAlumno(String consulta, Connection conexionGenerada) {
 	
 	System.out.println("[INFORMACIÓN-consultasPostgreSQL-insertNuevoAlumno] Entra en insertNuevoAlumno");
@@ -104,7 +107,7 @@ public static void insertNuevoAlumno(String consulta, Connection conexionGenerad
 	
 }
 
-
+     //Metodo que borra un alumno
 public static void deleteAlumnos(String consulta,Connection conexionGenerada) {
 	
 	System.out.println("[INFORMACIÓN-consultasPostgreSQL-deleteAlumnos] Entra en deleteAlumnos");
@@ -126,7 +129,7 @@ try {
 	
 	}
 }
-
+      //Metodo que actualiza un alumno 
 public static void updateAlumnos(String consulta,Connection conexionGenerada) {
 	
 	System.out.println("[INFORMACIÓN-consultasPostgreSQL-updateAlumnos] Entra en updateAlumnos");
